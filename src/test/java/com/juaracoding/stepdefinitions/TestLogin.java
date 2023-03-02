@@ -23,7 +23,6 @@ public class TestLogin {
     @Test(priority = 1)
     public void testurl(){
         driver.get("https://shop.demoqa.com/my-account/");
-
         //step verify
         Assert.assertEquals(loginPage.getLoginTitle(),"LOGIN");
     }
