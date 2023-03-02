@@ -25,6 +25,8 @@ public class LoginPage {
     WebElement  btnLogin;
     @FindBy(xpath = "//div[@id='primary']//li[1]")
     WebElement txtInvalidCredentials;
+    @FindBy(xpath = "(//p[contains(text(),'Hello')])[1]")
+    WebElement txtDashboard;
 
     public String getLoginTitle(){
         return loginTitle.getText();
@@ -32,6 +34,10 @@ public class LoginPage {
 
     public String getTxtInvalidCredentials(){
         return txtInvalidCredentials.getText();
+    }
+
+    public String getTxtDashboard(){
+        return txtDashboard.getText();
     }
 
     public void login(String username, String password){

@@ -27,13 +27,19 @@ public class TestLogin {
         //step verify
         Assert.assertEquals(loginPage.getLoginTitle(),"LOGIN");
     }
-
     @Test(priority = 2)
     public void testInvalidLogin() {
         delay(1);
         loginPage.login("kukuh", "invalid");
         Assert.assertEquals(loginPage.getTxtInvalidCredentials(), "ERROR: The username or password you entered is incorrect. Lost your password?");
     }
+
+    @Test(priority = 3)
+    public void testValidLogin(){
+        loginPage.login("","Nasiudk123");
+        Assert.assertEquals(loginPage.getTxtDashboard(),"Dashboard");
+    }
+
     @AfterClass
     public void quitBrowser(){
         delay(2);
